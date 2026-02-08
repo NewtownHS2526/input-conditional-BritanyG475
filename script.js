@@ -10,11 +10,25 @@ let score = 0;
 
 const checkAnswer = () => {
   // Retrieve inputted value
-
+const answer = textBox.value.toLowerCase();
   // Match against boroughs; Add text to output and increment score
-
+if (answer === "manhattan") {
+  outputBox.innerHTML += '<h3>Manhattan</h3><p>Commuter Central! Only 22% of its residents own a car!</p>';
+  score++;
+} else if (answer === "bronx") {
+  outputBox.innerHTML += '<h3>The Bronx</h3><p>Home of the Yankees and the birthplace of salsa dancing.</p>'
+  score++;
+}else if (answer === "queens") {
+  outputBox.innerHTML += '<h3>Queens</h3><p>The largest Borough, at 109 square miles.</p>';
+  score++;
+}else if (answer === "saten island") {
+  outputBox.innerHTML += '<h3>Staten Island</h3><p>The roomiest Borough, with the fewest people per square mil.</p>';
+  score++;
+}
   //check if score = 5! (winner)
-
+if (score === 5) {
+  statusBox.textContent = "You got all 5 boroughs!";
+}
   // Reset the textBox
   textBox.value = "";
 };
